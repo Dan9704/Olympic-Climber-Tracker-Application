@@ -3,6 +3,15 @@
 
 **Olympic Climber Tracker Application** is a mobile app designed to track and enhance the performance of climbers. Whether you’re training for the Olympics or just climbing for fun, this app provides real-time scoring, personalized feedback, and a user-friendly interface that helps athletes and coaches track their progress effortlessly.
 
+## Example Application Running
+<p align="center">
+  <img src="demo/1.gif" width="200">
+  <img src="demo/2.gif" width="200">
+  <img src="demo/3.gif" width="200">
+  <img src="demo/4.gif" width="200"> <br />
+   <i>Sample results</i>
+</p>
+
 ## Features
 
 - **Real-Time Scoring**: Automatically updates the climber's score based on their performance.
