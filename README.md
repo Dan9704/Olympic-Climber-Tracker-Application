@@ -9,7 +9,7 @@
   <img src="demo/2.gif" width="200">
   <img src="demo/3.gif" width="200">
   <img src="demo/4.gif" width="200"> <br />
-   <i>Sample results</i>
+   <i>Sample results on Pixel 8 Pro API 35</i>
 </p>
 
 ## Features
