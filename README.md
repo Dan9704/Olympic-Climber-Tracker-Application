@@ -5,11 +5,11 @@
 
 ## Example Application Running
 <p align="center">
+  <h1>Sample results on Pixel 8 Pro API 35<h1>
   <img src="demo/1.gif" width="200">
   <img src="demo/2.gif" width="200">
   <img src="demo/3.gif" width="200">
   <img src="demo/4.gif" width="200"> <br />
-   <i>Sample results on Pixel 8 Pro API 35</i>
   <img src="demo/5.gif" width="200">
   <img src="demo/6.gif" width="200"> <br />
    <i>Sample results on Pixel Fold API 35</i>
