@@ -44,15 +44,25 @@ Contributions are welcome! If you have any ideas or improvements, feel free to s
    ```bash
    git checkout -b feature-your-feature-name
    ```
-4. **Commit Your Changes**:
+3. **Commit Your Changes**:
    ```bash
    git commit -m 'Add some feature'
    ```
-6. **Push to the Branch**:
+4. **Push to the Branch**:
    ```bash
    git push origin feature-your-feature-name
    ```
-8. **Create a Pull Request.**
+5. **Create a Pull Request.**
 
-### Installation
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Contact
+
+For any questions or suggestions, feel free to reach out:
+
+- **Email**: tungduong9704@gmail.com
+- **GitHub**: [Your GitHub Profile](https://github.com/Dan9704)
+
 
