@@ -63,6 +63,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For any questions or suggestions, feel free to reach out:
 
 - **Email**: tungduong9704@gmail.com
-- **GitHub**: [Your GitHub Profile](https://github.com/Dan9704)
+- **GitHub**: [GitHub Profile](https://github.com/Dan9704)
 
 
