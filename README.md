@@ -28,3 +28,31 @@
 2. **Open the Project**: Open the project in Android Studio.
 3. **Build the Project**: Let Android Studio sync and build the project automatically.
 4. **Run the App**: Connect your device or start an emulator, then click the "Run" button.
+
+### Usage
+- **Start a Climb**: Enter the athlete's name and press the "Climb" button to begin tracking their progress.
+- **Track Scores**: Watch as the app updates the score in real-time.
+- **Reset**: Hit the "Reset" button to clear all data and start a new session.
+- **Multilingual**: Switch your device's language to see the app in your preferred language.
+
+### Contributing
+Contributions are welcome! If you have any ideas or improvements, feel free to submit a pull request or open an issue.
+
+### Step to Contribute
+1. **Fork the Repository.**
+2. **Create a New Branch**:
+   ```bash
+   git checkout -b feature-your-feature-name
+   ```
+4. **Commit Your Changes**:
+   ```bash
+   git commit -m 'Add some feature'
+   ```
+6. **Push to the Branch**:
+   ```bash
+   git push origin feature-your-feature-name
+   ```
+8. **Create a Pull Request.**
+
+### Installation
+
