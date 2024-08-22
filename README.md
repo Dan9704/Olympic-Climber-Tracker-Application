@@ -17,9 +17,13 @@
     </tr>
   </table>
   <h3>Sample results on Different Language</h3>
-  <img src="demo/7.gif" width="200">
-  <img src="demo/8.gif" width="200">
-  <img src="demo/9.gif" width="200"> <br />
+  <table>
+    <tr>
+      <td><img src="demo/7.gif" width="200"></td>
+      <td><img src="demo/8.gif" width="200"></td>
+      <td><img src="demo/9.gif" width="200"></td>
+    </tr>
+  </table>
 </p>
 
 ## Features
