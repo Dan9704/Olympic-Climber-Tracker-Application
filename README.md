@@ -3,16 +3,23 @@
 
 **Olympic Climber Tracker Application** is a mobile app designed to track and enhance the performance of climbers. Whether you’re training for the Olympics or just climbing for fun, this app provides real-time scoring, personalized feedback, and a user-friendly interface that helps athletes and coaches track their progress effortlessly.
 
-## Example Application Running
 <p align="center">
+  <h3>Sample results on Pixel 8 Pro API 35<h3>
   <img src="demo/1.gif" width="200">
   <img src="demo/2.gif" width="200">
   <img src="demo/3.gif" width="200">
   <img src="demo/4.gif" width="200"> <br />
-   <i>Sample results on Pixel 8 Pro API 35</i>
-  <img src="demo/5.gif" width="200">
-  <img src="demo/6.gif" width="200"> <br />
-   <i>Sample results on Pixel Fold API 35</i>
+  <h3>Sample results on Pixel Fold API 35</h3>
+  <table>
+    <tr>
+      <td><img src="demo/5.gif" width="400"></td>
+      <td><img src="demo/6.gif" width="400"></td>
+    </tr>
+  </table>
+  <h3>Sample results on Different Language</h3>
+  <img src="demo/7.gif" width="200">
+  <img src="demo/8.gif" width="200">
+  <img src="demo/9.gif" width="200"> <br />
 </p>
 
 ## Features
