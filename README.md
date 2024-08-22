@@ -26,5 +26,5 @@
    git clone https://github.com/your-username/OlympicClimberTracker.git
    ```
 2. **Open the Project**: Open the project in Android Studio.
-3. Build the Project: Let Android Studio sync and build the project automatically.
-4. Run the App: Connect your device or start an emulator, then click the "Run" button.
+3. **Build the Project**: Let Android Studio sync and build the project automatically.
+4. **Run the App**: Connect your device or start an emulator, then click the "Run" button.
