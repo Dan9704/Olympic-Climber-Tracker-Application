@@ -10,8 +10,16 @@
   <img src="demo/3.gif" width="200">
   <img src="demo/4.gif" width="200"> <br />
   <h3>Sample results on Pixel Fold API 35</h3>
-  <img src="demo/5.gif" width="200">
-  <img src="demo/6.gif" width="200"> <br />
+  <table>
+    <tr>
+      <td><img src="demo/5.gif" width="400"></td>
+      <td><img src="demo/6.gif" width="400"></td>
+    </tr>
+  </table>
+  <h3>Sample results on Different Language</h3>
+  <img src="demo/7.gif" width="200">
+  <img src="demo/8.gif" width="200">
+  <img src="demo/9.gif" width="200"> <br />
 </p>
 
 ## Features
