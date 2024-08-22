@@ -38,7 +38,7 @@
 ### Contributing
 Contributions are welcome! If you have any ideas or improvements, feel free to submit a pull request or open an issue.
 
-### Step to Contribute
+#### Step to Contribute
 1. **Fork the Repository.**
 2. **Create a New Branch**:
    ```bash
