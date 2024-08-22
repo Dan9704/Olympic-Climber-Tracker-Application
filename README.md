@@ -10,6 +10,9 @@
   <img src="demo/3.gif" width="200">
   <img src="demo/4.gif" width="200"> <br />
    <i>Sample results on Pixel 8 Pro API 35</i>
+  <img src="demo/5.gif" width="200">
+  <img src="demo/6.gif" width="200"> <br />
+   <i>Sample results on Pixel Fold API 35</i>
 </p>
 
 ## Features
