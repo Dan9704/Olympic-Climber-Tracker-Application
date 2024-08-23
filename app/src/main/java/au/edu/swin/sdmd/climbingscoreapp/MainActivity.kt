@@ -13,6 +13,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+    // Declare UI elements
     private lateinit var scoreTextView: TextView
     private lateinit var holdTextView: TextView
     private lateinit var gameOverTextView: TextView
@@ -21,11 +22,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var athleteNameEditText: EditText
     private lateinit var congratulationTextView: TextView
 
+    // Game state variables
     private var score = 0
     private var hold = 0
     private var isGameOver = false
     private var isMaxScoreReached = false
 
+    // Handler for updating the timer
     private var handler = Handler(Looper.getMainLooper())
     private var startTime = 0L
     private var isTimerRunning = false
@@ -35,15 +38,20 @@ class MainActivity : AppCompatActivity() {
     private lateinit var climbSoundPlayer: MediaPlayer
     private lateinit var fallSoundPlayer: MediaPlayer
 
+    // Override the onCreate method to set up the activity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Enable edge-to-edge UI display
         enableEdgeToEdge()
+        // Set the layout for the activity
         setContentView(R.layout.activity_main)
+        // Set up insets for edge-to-edge display
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
 
         scoreTextView = findViewById(R.id.scoreTextView)
         holdTextView = findViewById(R.id.holdTextView)
@@ -53,6 +61,7 @@ class MainActivity : AppCompatActivity() {
         athleteNameEditText = findViewById(R.id.athleteNameEditText)
         congratulationTextView = findViewById(R.id.congratulationTextView)
 
+        // Initialize buttons
         val climbButton: Button = findViewById(R.id.climbButton)
         val fallButton: Button = findViewById(R.id.fallButton)
         val resetButton: Button = findViewById(R.id.resetButton)
@@ -60,31 +69,32 @@ class MainActivity : AppCompatActivity() {
         // Initialize the MediaPlayer for background music
         backgroundMediaPlayer = MediaPlayer.create(this, R.raw.background_music)
         backgroundMediaPlayer.isLooping = true // Loop the background music
-
         backgroundMediaPlayer.start()
 
         // Initialize the MediaPlayer for sound effects
         climbSoundPlayer = MediaPlayer.create(this, R.raw.climb_sound)
         fallSoundPlayer = MediaPlayer.create(this, R.raw.fall_sound)
 
+        // Set click listeners for buttons
         climbButton.setOnClickListener {
             if (!isTimerRunning && !isGameOver) {
-                startTimer()
+                startTimer() // Start the timer when the game starts
             }
             if (!isGameOver && !isMaxScoreReached) {
                 // Play climb sound effect
                 climbSoundPlayer.start()
 
-                hold++
+                hold++ // Increase hold value
                 when (hold) {
                     in 1..3 -> score++
                     in 4..6 -> score += 2
                     in 7..9 -> score += 3
                 }
-                updateUI()
+                updateUI() // Update the UI with the new score and hold values
             }
         }
 
+        // Set click listeners for Fall buttons
         fallButton.setOnClickListener {
             if (!isGameOver && !isMaxScoreReached && hold > 0) {
                 // Play fall sound effect
@@ -95,34 +105,40 @@ class MainActivity : AppCompatActivity() {
                 val athleteName = athleteNameEditText.text.toString()
                 congratulationTextView.text = getString(R.string.congratulations, athleteName, score, timerTextView.text)
                 congratulationTextView.visibility = TextView.VISIBLE
-                stopTimer()
-                isGameOver = true
+                stopTimer() // Stop the timer when the game ends
+                isGameOver = true  // Set the game over flag to true
             }
         }
 
+        // Set click listeners for Reset buttons
         resetButton.setOnClickListener {
             resetGame()
         }
     }
 
+    // Update the UI with the current score and hold values
     private fun updateUI() {
         val scoreLabel = getString(R.string.score_label)
         val holdLabel = getString(R.string.hold_label)
 
         scoreTextView.text = "$scoreLabel $score"
         holdTextView.text = "$holdLabel $hold"
+
+        // Set text color based on hold value
         when (hold) {
             in 1..3 -> holdTextView.setTextColor(resources.getColor(R.color.blue))
             in 4..6 -> holdTextView.setTextColor(resources.getColor(R.color.green))
             in 7..9 -> holdTextView.setTextColor(resources.getColor(R.color.red))
         }
 
+        // Check if the maximum score is reached, and if so, end the game
         if (hold == 9) {
             maxScoreReached()
             isGameOver = true
         }
     }
 
+    // Handle the case when the maximum score is reached
     private fun maxScoreReached() {
         maxScoreTextView.visibility = TextView.VISIBLE
         stopTimer()
@@ -134,17 +150,20 @@ class MainActivity : AppCompatActivity() {
         congratulationTextView.visibility = TextView.VISIBLE
     }
 
+    // Start the timer for the game
     private fun startTimer() {
         startTime = System.currentTimeMillis()
         isTimerRunning = true
         handler.post(timerRunnable)
     }
 
+    // Stop the timer for the game
     private fun stopTimer() {
         isTimerRunning = false
         handler.removeCallbacks(timerRunnable)
     }
 
+    // Runnable for updating the timer
     private val timerRunnable = object : Runnable {
         override fun run() {
             if (isTimerRunning) {
@@ -158,6 +177,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Reset the game state to its initial values
     private fun resetGame() {
         score = 0
         hold = 0
@@ -172,6 +192,7 @@ class MainActivity : AppCompatActivity() {
         timerTextView.text = getString(R.string.default_timer_text)
     }
 
+    // Release the MediaPlayer resources when the activity is destroyed
     override fun onDestroy() {
         super.onDestroy()
         // Release the MediaPlayer when the activity is destroyed
