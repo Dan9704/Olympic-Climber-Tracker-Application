@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-
+        // Initialize UI elements
         scoreTextView = findViewById(R.id.scoreTextView)
         holdTextView = findViewById(R.id.holdTextView)
         gameOverTextView = findViewById(R.id.gameOverTextView)
@@ -94,12 +94,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Set click listeners for Fall buttons
+        // Set click listeners for Fall button
         fallButton.setOnClickListener {
             if (!isGameOver && !isMaxScoreReached && hold > 0) {
                 // Play fall sound effect
                 fallSoundPlayer.start()
-
+                score -= 3
+                if (score < 0) score = 0
+                updateUI() // Update the UI after score change
                 gameOverTextView.visibility = TextView.VISIBLE
                 // Display congratulation message
                 val athleteName = athleteNameEditText.text.toString()
@@ -110,9 +112,39 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Set click listeners for Reset buttons
+        // Set click listeners for Reset button
         resetButton.setOnClickListener {
             resetGame()
+        }
+    }
+
+    // Save the current state of the game
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("score", score)
+        outState.putInt("hold", hold)
+        outState.putBoolean("isGameOver", isGameOver)
+        outState.putBoolean("isMaxScoreReached", isMaxScoreReached)
+        outState.putLong("startTime", startTime)
+        outState.putBoolean("isTimerRunning", isTimerRunning)
+    }
+
+    // Restore the saved state of the game
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        score = savedInstanceState.getInt("score")
+        hold = savedInstanceState.getInt("hold")
+        isGameOver = savedInstanceState.getBoolean("isGameOver")
+        isMaxScoreReached = savedInstanceState.getBoolean("isMaxScoreReached")
+        startTime = savedInstanceState.getLong("startTime")
+        isTimerRunning = savedInstanceState.getBoolean("isTimerRunning")
+
+        // Update the UI with the restored state
+        updateUI()
+
+        // Restart the timer if it was running before rotation
+        if (isTimerRunning) {
+            handler.post(timerRunnable)
         }
     }
 
